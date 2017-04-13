@@ -1,0 +1,64 @@
+FORMAT: 1A
+HOST: http://polls.apiblueprint.org/
+
+# LotteryNumbers
+
+This is a simple API for a lottery company, which needs to submit an request Lottery Numbers.
+
+# Numbers [/numbers]
+
+## Submit [POST]
+Submit the winning numbers of today.
+
++ Request (application/json)
+    + Attributes (lotteryNumbers)
+    
++ Response 200 (application/json)
+
+    + Headers
+    
+            Location: /numbers/10042017
+    
+    + Body
+        
+            + Attributes (lotteryBill)
+
+## Request recent [GET]
+Get the most recent number
+
++ Response 200 (application/json)
+    + Headers
+    
+            Location: /numbers/10042017
+    
+    + Body
+    
+            + Attributes (lotteryBill)
+
+## Request specific [GET /numbers/{ddmmyyyy}]
+Get specific winning numbers of one date.
+
++ Parameters
+    + ddmmyyyy: 10042017 (required, string) - Date of Winning Numbers
+
++ Response 200 (application/json)
+
+    + Body
+            
+            + Attributes (lotteryBill)
+
+
+# Data Structures
+
+## lotteryNumbers (object)
++ numbers: 1, 2, 3, 4, 5, 6 (array[number]) - 6 winning numbers of the lottery
++ superNumber: 42 (number) - Super winning number
+
+## lotteryBill (object)
++ lotteryNumber (lotteryNumbers) - Numbers of the lottery bill
++ date (date) - Datum
+
+## date (object)
++ year: 2017 (number)
++ month: 4 (number)
++ day: 10 (number)

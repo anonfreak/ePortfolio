@@ -38,8 +38,7 @@ Submit the winning numbers of today.
     + Headers
             Location: /numbers/10042017
 
-    + Body
-            + Attributes (lotteryBill)
+    + Attributes (lotteryBill)
 
 ## Request recent [GET]
 Get the most recent number
@@ -49,9 +48,7 @@ Get the most recent number
 
             Location: /numbers/10042017
 
-    + Body
-
-            + Attributes (lotteryBill)
+    + Attributes (lotteryBill)
 
 ## Request specific [GET /numbers/{ddmmyyyy}]
 Get specific winning numbers of one date.
@@ -60,9 +57,7 @@ Get specific winning numbers of one date.
     + ddmmyyyy: 10042017 (required, string) - Date of Winning Numbers
 
 + Response 200 (application/json)
-    + Body
-
-            + Attributes (lotteryBill)
+    + Attributes (lotteryBill)
 
 
 ```
